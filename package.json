@@ -1,34 +1,32 @@
 {
-  "name": "consistency-key",
+  "name": "advanced-visit-tracker",
   "version": "1.0.0",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "example": "ts-node examples/basic-usage.ts"
+    "build": "webpack --mode production",
+    "prepare": "npm run build"
   },
-  "keywords": [
-    "consistency",
-    "streak",
-    "daily",
-    "habit",
-    "typescript"
-  ],
-  "author": "Christian Bulabula",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/MrSolution07/consistency-key.git"
-  },
-  "homepage": "https://github.com/MrSolution07/consistency-key#readme",
-  "bugs": {
-    "url": "https://github.com/MrSolution07/consistency-key/issues"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@fingerprintjs/fingerprintjs": "^4.6.2",
+    "axios": "^1.10.0",
+    "pusher-js": "^8.4.0",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
-    "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+    "@types/axios": "^0.9.36",
+    "@types/fingerprintjs__fingerprintjs": "^2.1.0",
+    "@types/node": "^24.0.13",
+    "@types/pusher-js": "^4.2.2",
+    "@types/uuid": "^10.0.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.3",
+    "webpack": "^5.100.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-merge": "^6.0.1"
   }
 }
