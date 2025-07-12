@@ -1,34 +1,24 @@
 {
   "name": "advanced-visit-tracker",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/bundle.js",
+  "type": "module",
   "scripts": {
-    "build": "webpack --mode production",
-    "prepare": "npm run build"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "@fingerprintjs/fingerprintjs": "^4.6.2",
+    "@fingerprintjs/fingerprintjs": "4.2.1",
     "@supabase/supabase-js": "^2.50.5",
-    "axios": "^1.10.0",
-    "dotenv": "^17.2.0",
-    "pusher-js": "^8.4.0",
-    "uuid": "^11.1.0"
+    "pusher-js": "8.2.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "@types/axios": "^0.9.36",
-    "@types/fingerprintjs__fingerprintjs": "^2.1.0",
-    "@types/node": "^24.0.13",
-    "@types/pusher-js": "^4.2.2",
+    "@types/pusher-js": "5.1.0",
     "@types/uuid": "^10.0.0",
-    "clean-webpack-plugin": "^4.0.0",
-    "ts-loader": "^9.5.2",
     "typescript": "^5.8.3",
-    "webpack": "^5.100.1",
-    "webpack-cli": "^6.0.1",
-    "webpack-merge": "^6.0.1"
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^3.9.1"
   }
 }

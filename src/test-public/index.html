@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Visit Tracker Test</title>
+  <script src="http://localhost:3000/dist/bundle.js"></script>
+</head>
+<body>
+  <div id="counter">0</div>
+  <button id="track-btn">Track Event</button>
+
+  <script>
+    // Initialize
+    const cleanup = VisitTracker.showLiveVisitors('counter');
+    VisitTracker.trackPageView();
+
+    // Test event tracking
+    document.getElementById('track-btn').addEventListener('click', () => {
+      VisitTracker.trackEvent('button_click', { id: 'test-btn' });
+    });
+    
+    // Later when unmounting:
+    // cleanup();
+  </script>
+</body>
+</html>

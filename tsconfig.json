@@ -1,19 +1,18 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-    "module": "commonjs",
+    "target": "ESNext",
+    "module": "ESNext",
     "moduleResolution": "node",
-    "outDir": "./dist",
-    "rootDir": "./src",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "@core/*": ["./src/core/*"],
-      "@api/*": ["./src/api/*"],
-      "@dashboard/*": ["./src/dashboard/*"]
-    }
+      "@api/*": ["src/api/*"],
+      "@core/*": ["src/core/*"]
+    },
+    "types": ["vite/client"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]

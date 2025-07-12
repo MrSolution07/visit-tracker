@@ -1,13 +1,14 @@
 const path = require('path');
 
-module.exports = {
+const config = {
   entry: './src/index.ts',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
     library: 'VisitTracker',
     libraryTarget: 'umd',
-    globalObject: 'this'
+    globalObject: 'this',
+    clean: true 
   },
   resolve: {
     extensions: ['.ts', '.js'],
@@ -42,4 +43,27 @@ module.exports = {
     axios: 'axios',
     uuid: 'uuid'
   }
+};
+
+module.exports = (env, argv) => {
+  if (argv.mode === 'development') {
+    // Development-specific config
+    config.devtool = 'inline-source-map';
+    config.devServer = {
+      static: {
+        directory: path.join(__dirname, 'test-public'),
+      },
+      hot: true,
+      port: 3000,
+      open: true,
+      client: {
+        overlay: {
+          errors: true,
+          warnings: false,
+        },
+      },
+    };
+  }
+
+  return config;
 };
