@@ -1,20 +1,27 @@
 import { sendToBackend } from '@api/sender';
+import { getVisitorId } from './tracker';
 
-export function trackPageView(): void {
+export async function trackPageView(): Promise<void> {
+  const visitor_id = await getVisitorId();
   const data = {
-    type: 'pageview',
-    url: window.location.href,
-    timestamp: new Date().toISOString(),
+    path: window.location.pathname,
+    referrer: document.referrer,
+    user_agent: navigator.userAgent,
+    visitor_id,
   };
   sendToBackend(data);
 }
 
-export function trackEvent(eventName: string, metadata = {}): void {
+export async function trackEvent(eventName: string, metadata = {}): Promise<void> {
+  const visitor_id = await getVisitorId();
   const data = {
-    type: 'event',
-    name: eventName,
-    metadata,
-    timestamp: new Date().toISOString(),
+    path: window.location.pathname,
+    referrer: document.referrer,
+    user_agent: navigator.userAgent,
+    visitor_id,
+
+    event_name: eventName,
+    event_metadata: metadata,
   };
   sendToBackend(data);
 }
