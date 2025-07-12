@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "CommonJS",
+    "declaration": true,
+    "outDir": "dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "lib": ["es2016", "dom"],
+    "skipLibCheck": true
+  },
+  "include": ["src"]
+}
